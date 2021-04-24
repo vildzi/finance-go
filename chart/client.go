@@ -28,14 +28,16 @@ type Params struct {
 	Symbol   string             `form:"-"`
 	Start    *datetime.Datetime `form:"-"`
 	End      *datetime.Datetime `form:"-"`
+	Range    datetime.Interval 	`form:"-"`
 	Interval datetime.Interval  `form:"-"`
 
 	IncludeExt bool `form:"includePrePost"`
 
 	// Internal request fields.
-	interval string `form:"interval"`
-	start    int    `form:"period1"`
-	end      int    `form:"period2"`
+	interval  string `form:"interval"`
+	start     int    `form:"period1"`
+	end       int    `form:"period2"`
+	formRange string `form:"range"`
 }
 
 // Iter is a structure containing results
@@ -79,16 +81,20 @@ func (c Client) Get(params *Params) *Iter {
 	}
 
 	// Start and End times
-	params.start = -1
-	params.end = -1
-	if params.Start != nil {
-		params.start = params.Start.Unix()
-	}
-	if params.End != nil {
-		params.end = params.End.Unix()
-	}
-	if params.start > params.end {
-		return &Iter{iter.NewE(finance.CreateChartTimeError())}
+	if params.Range == "" {
+		params.start = -1
+		params.end = -1
+		if params.Start != nil {
+			params.start = params.Start.Unix()
+		}
+		if params.End != nil {
+			params.end = params.End.Unix()
+		}
+		if params.start > params.end {
+			return &Iter{iter.NewE(finance.CreateChartTimeError())}
+		}
+	} else {
+		params.formRange = string(params.Range)
 	}
 
 	// Parse interval.
