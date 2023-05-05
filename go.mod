@@ -1,4 +1,4 @@
-module github.com/vilP1l/finance-go
+module github.com/vildzi/finance-go
 
 go 1.13
 
