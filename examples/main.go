@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/piquette/finance-go/options"
+	"github.com/vildzi/finance-go/options"
 )
 
 // This file lists several usage examples of this library

@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/piquette/finance-go/form"
 	finance "github.com/vildzi/finance-go"
+	"github.com/vildzi/finance-go/form"
 )
 
 // This file should contain any testing helpers that should be commonly

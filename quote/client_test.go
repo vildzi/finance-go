@@ -3,9 +3,9 @@ package quote
 import (
 	"testing"
 
-	tests "github.com/piquette/finance-go/testing"
 	"github.com/stretchr/testify/assert"
 	finance "github.com/vildzi/finance-go"
+	tests "github.com/vildzi/finance-go/testing"
 )
 
 func TestGetRegularMarketQuote(t *testing.T) {
