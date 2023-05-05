@@ -3,9 +3,9 @@ package mutualfund
 import (
 	"testing"
 
-	finance "github.com/piquette/finance-go"
 	tests "github.com/piquette/finance-go/testing"
 	"github.com/stretchr/testify/assert"
+	finance "github.com/vildzi/finance-go"
 )
 
 func TestGetRegularMarketMutualFund(t *testing.T) {

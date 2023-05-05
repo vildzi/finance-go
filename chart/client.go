@@ -3,11 +3,11 @@ package chart
 import (
 	"context"
 
-	finance "github.com/piquette/finance-go"
 	"github.com/piquette/finance-go/datetime"
 	form "github.com/piquette/finance-go/form"
 	"github.com/piquette/finance-go/iter"
 	"github.com/shopspring/decimal"
+	finance "github.com/vildzi/finance-go"
 )
 
 // Client is used to invoke chart APIs.
@@ -28,7 +28,7 @@ type Params struct {
 	Symbol   string             `form:"-"`
 	Start    *datetime.Datetime `form:"-"`
 	End      *datetime.Datetime `form:"-"`
-	Range    datetime.Interval 	`form:"-"`
+	Range    datetime.Interval  `form:"-"`
 	Interval datetime.Interval  `form:"-"`
 
 	IncludeExt bool `form:"includePrePost"`
