@@ -152,6 +152,7 @@ func (s *BackendConfiguration) Call(path string, form *form.Values, ctx *context
 	}
 
 	req, err := s.NewRequest("GET", path, ctx)
+	req.Header.Set("Cookie", "A1=d=AQABBH9TVGQCEITSQuccv3z2989udNk9n1AFEgEBAQGkVWReZNxH0iMA_eMAAA&S=AQAAAt-8JnQNe5z2BRBdxibMxPk;")
 	if err != nil {
 		return err
 	}
