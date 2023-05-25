@@ -145,10 +145,16 @@ func SetBackend(backend SupportedBackend, b Backend) {
 }
 
 // Call is the Backend.Call implementation for invoking market data APIs.
-func (s *BackendConfiguration) Call(path string, form *form.Values, ctx *context.Context, v interface{}) error {
+func (s *BackendConfiguration) Call(path string, values *form.Values, ctx *context.Context, v interface{}) error {
 
-	if form != nil && !form.Empty() {
-		path += "?" + form.Encode()
+	if values == nil {
+		values = &form.Values{}
+	}
+
+	values.Set("crumb", "isHqSbfcbiR")
+
+	if values != nil && !values.Empty() {
+		path += "?" + values.Encode()
 	}
 
 	req, err := s.NewRequest("GET", path, ctx)
