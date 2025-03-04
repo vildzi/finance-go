@@ -151,14 +151,15 @@ func (s *BackendConfiguration) Call(path string, values *form.Values, ctx *conte
 		values = &form.Values{}
 	}
 
-	values.Set("crumb", "isHqSbfcbiR")
+	values.Set("crumb", "LigxAk1KQmG")
 
 	if values != nil && !values.Empty() {
 		path += "?" + values.Encode()
 	}
 
 	req, err := s.NewRequest("GET", path, ctx)
-	req.Header.Set("Cookie", "A1=d=AQABBH9TVGQCEITSQuccv3z2989udNk9n1AFEgEBAQGkVWReZNxH0iMA_eMAAA&S=AQAAAt-8JnQNe5z2BRBdxibMxPk;")
+	req.Header.Set("Cookie", "A1=d=AQABBI8aqWcCEJoHNrLMPngcKX8RgiEfuzcFEgEBCAFRu2fhZ9w80iMA_eMBAAcIjxqpZyEfuzc&S=AQAAAshm_YNcVkyYwQ9lwy_D0G8; A3=d=AQABBI8aqWcCEJoHNrLMPngcKX8RgiEfuzcFEgEBCAFRu2fhZ9w80iMA_eMBAAcIjxqpZyEfuzc&S=AQAAAshm_YNcVkyYwQ9lwy_D0G8; GUC=AQEBCAFnu1Fn4UIfhQSY&s=AQAAAKj3_7E9&g=Z7oGtg; PRF=theme%3Dauto%26t%3DVOO; _cb=CKabwo-wX47DtxZNv; _chartbeat2=.1740244657876.1741054830838.1000000001.NWsKhD3Zh2BJUi5lBFBHhHDk_NDz.2; A1S=d=AQABBI8aqWcCEJoHNrLMPngcKX8RgiEfuzcFEgEBCAFRu2fhZ9w80iMA_eMBAAcIjxqpZyEfuzc&S=AQAAAshm_YNcVkyYwQ9lwy_D0G8; _cb_svref=https%3A%2F%2Fwww.google.com%2F; _SUPERFLY_lockout=1; _chartbeat4=t=C5dbBaC7t_VXCidiG3Dr03DwDFEhxb&E=7&x=0&c=1.48&y=4617&w=791")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0")
 	if err != nil {
 		return err
 	}
